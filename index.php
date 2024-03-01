@@ -70,6 +70,37 @@
         </div>
     </div>
 
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">Home</a>
+                        <a href="#" class="list-group-item list-group-item-action">Sobre</a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between">
+                            Equipe
+                            <span class="badge rounded-pill text-bg-light">2</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-header">Sobre</div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group mb-3">
+                                    <h5 class="card-title">Código HTML:</h5>
+                                    <textarea style="height: 150px; resize: vertical;" class="form-control"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script src="https://releases.jquery.com/git/jquery-3.x-git.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>

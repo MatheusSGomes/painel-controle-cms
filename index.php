@@ -30,6 +30,16 @@
         </div>
     </nav>
 
+    <section class="container">
+        <nav class="mt-3" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+        </nav>
+    </section>
+
     <header data-bs-theme="dark" class="container my-4">
         <div class="p-4 text-center">
             <div class="row">

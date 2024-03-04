@@ -10,20 +10,16 @@
 <body data-bs-theme="dark">
     <nav data-bs-theme="dark" class="py-2 bg-body-tertiary border-bottom">
         <div class="container d-flex flex-wrap">
-            <ul class="nav me-auto">
+            <ul id="menu-principal" class="nav me-auto">
                 <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2 active" aria-current="page">Cadastrar Equipe</a></li>
                 <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Editar Sobre</a></li>
                 <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Gerenciar Equipe</a></li>
             </ul>
-            <ul class="nav">
+            <ul id="menu-autenticacao" class="nav">
                 <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Entrar</a></li>
                 <li class="nav-item">
                     <a href="#" class="nav-link link-body-emphasis">
-                        Sair
-                        <svg style="margin: 0 .5rem;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
-                            <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
-                        </svg>
+                        Sair <img class="ml-2" src="./icons/exit.svg" />
                     </a>
                 </li>
             </ul>
@@ -45,18 +41,13 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="d-flex justify-content-center align-items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-grid-1x2-fill" viewBox="0 0 16 16">
-                            <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1z"/>
-                        </svg>
+                        <img src="./icons/painel.svg" />
                         <h1 style="margin: 0 1rem;" class="text-body-emphasis">Painel de Controle</h1>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="d-flex justify-content-center align-items-center h-3">
-                        <svg style="margin: 0 .5rem;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
-                        </svg>
+                        <img style="margin: 0 1rem;" src="./icons/clock.svg" />
                         <p style="margin: 0;">Seu último login foi em:</p>
                     </div>
                 </div>
@@ -75,10 +66,14 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">Home</a>
-                        <a href="#" class="list-group-item list-group-item-action">Sobre</a>
+                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                            Sobre
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            Cadastrar equipe
+                        </a>
                         <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between">
-                            Equipe
+                            Listar equipe
                             <span class="badge rounded-pill text-bg-light">2</span>
                         </a>
                     </div>
@@ -120,23 +115,25 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Nome do membro</th>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nome do membro</th>
+                                        <th scope="col">Ação</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                    </tr>
+                                    <?php for ($i = 0; $i < 3; $i++) { ?>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>
+
+                                                <button type="button" class="btn btn-danger">
+                                                    <img src="./icons/trash.svg" class="" />
+                                                    Excluir
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
@@ -148,5 +145,19 @@
 
     <script src="https://releases.jquery.com/git/jquery-3.x-git.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+
+            cliqueMenu();
+
+            function cliqueMenu() {
+                $('#menu-principal a, #menu-autenticacao a').click(function () {
+                    alert('clicando!');
+                    return false;
+                })
+            }
+
+        })
+    </script>
 </body>
 </html>

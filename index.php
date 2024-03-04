@@ -96,6 +96,51 @@
                             </form>
                         </div>
                     </div>
+
+                    <div class="card mt-3">
+                        <div class="card-header">Cadastrar Equipe</div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group mb-3">
+                                    <h5 class="card-title">Membro da equipe:</h5>
+                                    <input type="text" name="nome_membro" class="form-control" />
+                                </div>
+                                <div class="form-group mb-3">
+                                    <h5 class="card-title">Descrição do membro:</h5>
+                                    <textarea style="height: 150px; resize: vertical;" class="form-control"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card mt-3">
+                        <div class="card-header">Membros da Equipe</div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nome do membro</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

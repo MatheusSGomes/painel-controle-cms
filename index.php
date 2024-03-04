@@ -11,9 +11,9 @@
     <nav data-bs-theme="dark" class="py-2 bg-body-tertiary border-bottom">
         <div class="container d-flex flex-wrap">
             <ul id="menu-principal" class="nav me-auto">
-                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2 active" aria-current="page">Cadastrar Equipe</a></li>
-                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Editar Sobre</a></li>
-                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Gerenciar Equipe</a></li>
+                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2" ref_sys="menu_sobre">Editar Sobre</a></li>
+                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2" ref_sys="menu_cadastrar">Cadastrar Equipe</a></li>
+                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2" ref_sys="menu_gerenciar">Listar Equipe</a></li>
             </ul>
             <ul id="menu-autenticacao" class="nav">
                 <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Entrar</a></li>
@@ -25,16 +25,6 @@
             </ul>
         </div>
     </nav>
-
-    <section class="container">
-        <nav class="mt-3" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Library</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data</li>
-            </ol>
-        </nav>
-    </section>
 
     <header data-bs-theme="dark" class="container my-4">
         <div class="p-4 text-center">
@@ -65,14 +55,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                    <div id="menu-lateral" class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true" ref_sys="menu_sobre">
                             Sobre
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action">
+                        <a href="#" class="list-group-item list-group-item-action" ref_sys="menu_cadastrar">
                             Cadastrar equipe
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between">
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between" ref_sys="menu_gerenciar">
                             Listar equipe
                             <span class="badge rounded-pill text-bg-light">2</span>
                         </a>
@@ -151,8 +141,11 @@
             cliqueMenu();
 
             function cliqueMenu() {
-                $('#menu-principal a, #menu-autenticacao a').click(function () {
-                    alert('clicando!');
+                $('#menu-principal a, #menu-lateral a, #menu-autenticacao a').click(function () {
+                    // remove active de todos os itens
+                    $('#menu-principal a, #menu-lateral a, #menu-autenticacao a').removeClass('active')
+                    // adiciona active apenas no item clicado
+                    $('#menu-lateral a[ref_sys=' + $(this).attr('ref_sys') + ']').first().addClass('active');
                     return false;
                 })
             }

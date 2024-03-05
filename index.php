@@ -139,6 +139,7 @@
         $(function () {
 
             cliqueMenu();
+            scrollItem();
 
             function cliqueMenu() {
                 $('#menu-principal a, #menu-lateral a, #menu-autenticacao a').click(function () {
@@ -148,6 +149,14 @@
                     $('#menu-lateral a[ref_sys=' + $(this).attr('ref_sys') + ']').first().addClass('active');
                     return false;
                 })
+            }
+
+            function scrollItem() {
+                $('#menu-principal a, #menu-lateral a, #menu-autenticacao a').click(function () {
+                    const ref = '#' + $(this).attr('ref_sys') + '_section';
+                    const offset = $(ref).offset().top
+                    $('html,body').animate({'scrollTop': offset})
+                });
             }
 
         })

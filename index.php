@@ -23,7 +23,12 @@
                 <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2" ref_sys="menu_sobre">Editar Sobre</a></li>
                 <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2" ref_sys="menu_cadastrar">Cadastrar Equipe</a></li>
                 <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2" ref_sys="menu_gerenciar">Listar Equipe</a></li>
-                <li class="nav-item"><a href="http://localhost:8000/pagina.php" target="_blank" class="nav-link link-body-emphasis px-2">Visualizar Página</a></li>
+                <li class="nav-item">
+                    <a href="http://localhost:8000/pagina.php" target="_blank" class="nav-link link-body-emphasis px-2">
+                        Visualizar Página
+                        <img style="margin-left: .3rem" src="./icons/arrow-up-right-square.svg" />
+                    </a>
+                </li>
             </ul>
             <ul id="menu-autenticacao" class="nav">
                 <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Entrar</a></li>

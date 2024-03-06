@@ -23,6 +23,7 @@
                 <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2" ref_sys="menu_sobre">Editar Sobre</a></li>
                 <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2" ref_sys="menu_cadastrar">Cadastrar Equipe</a></li>
                 <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2" ref_sys="menu_gerenciar">Listar Equipe</a></li>
+                <li class="nav-item"><a href="http://localhost:8000/pagina.php" target="_blank" class="nav-link link-body-emphasis px-2">Visualizar Página</a></li>
             </ul>
             <ul id="menu-autenticacao" class="nav">
                 <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Entrar</a></li>
@@ -84,7 +85,7 @@
                             <form>
                                 <div class="form-group mb-3">
                                     <h5 class="card-title">Código HTML:</h5>
-                                    <textarea style="height: 150px; resize: vertical;" class="form-control"></textarea>
+                                    <textarea style="height: 150px; resize: vertical;" class="form-control"><?php echo $sobre ?></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
@@ -156,7 +157,10 @@
                     $('#menu-principal a, #menu-lateral a, #menu-autenticacao a').removeClass('active')
                     // adiciona active apenas no item clicado
                     $('#menu-lateral a[ref_sys=' + $(this).attr('ref_sys') + ']').first().addClass('active');
-                    return false;
+
+                    if($(this).attr('ref_sys')) {
+                        return false;
+                    }
                 })
             }
 

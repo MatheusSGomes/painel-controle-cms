@@ -84,15 +84,33 @@
                     </div>
                 </div>
                 <div class="col-md-9">
+                    <?php
+
+                        if (isset($_POST['editar_sobre'])) {
+                            $sobre = $_POST['sobre'];
+
+                            $pdo->exec("DELETE FROM `tb_sobre`");
+                            $pdo->prepare("INSERT INTO `tb_sobre`(`id`, `sobre`) VALUES (null, ?)");
+                            $sql->execute($sobre);
+
+                            echo '<div class="alert alert-success" role="alert">Código <b>sobre</b> editado com sucesso!</div>';
+
+                            $sobre = $pdo->prepare("SELECT * FROM `tb_sobre`");
+                            $sobre->execute();
+                            $sobre = $sobre->fetch()["sobre"];
+                        }
+
+                    ?>
                     <div class="card">
                         <div class="card-header">Sobre</div>
                         <div class="card-body">
-                            <form>
+                            <form method="post">
                                 <div class="form-group mb-3">
                                     <h5 class="card-title">Código HTML:</h5>
-                                    <textarea style="height: 150px; resize: vertical;" class="form-control"><?php echo $sobre ?></textarea>
+                                    <textarea name="sobre" style="height: 150px; resize: vertical;" class="form-control"><?php echo $sobre ?></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <input type="hidden" name="editar_sobre" value="" />
+                                <button type="submit" name="acao" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
                     </div>

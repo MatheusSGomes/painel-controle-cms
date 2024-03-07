@@ -32,7 +32,7 @@
       }
     </style>
 </head>
-<body class="d-flex h-100 text-center text-white bg-dark">
+<body data-bs-theme="dark" class="d-flex h-100 text-center text-white bg-dark">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="mb-auto">
             <div>
@@ -63,6 +63,28 @@
             <p class="lead">
                 <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-black">Link</a>
             </p>
+        </main>
+
+        <hr />
+
+        <main class="py-5 my-5">
+            <h1>Contato</h1>
+            <form>
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="mb-3">
+                    <label for="mensagem" class="form-label">Mensagem</label>
+                    <textarea type="email" class="form-control" id="mensagem"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
         </main>
     </div>
 </body>

@@ -83,6 +83,7 @@
                         </a>
                     </div>
                 </div>
+
                 <div class="col-md-9">
                     <?php
 
@@ -100,6 +101,15 @@
                             $sobre = $pdo->prepare("SELECT * FROM `tb_sobre`");
                             $sobre->execute();
                             $sobre = $sobre->fetch()["sobre"];
+                        } else if (isset($_POST['cadastrar_equipe'])) {
+                            $nome = $_POST['nome_membro'];
+                            $descricao = $_POST['descricao_membro'];
+
+                            $sql = "INSERT INTO `tb_equipe`(`id`, `nome`, `descricao`) VALUES (null, :nome, :descricao)";
+                            $sth = $pdo->prepare($sql);
+                            $sth->execute(['nome' => $nome, 'descricao' => $descricao]);
+
+                            echo '<div class="alert alert-success" role="alert">O <b>membro da equipe</b> foi cadastrado com sucesso!</div>';
                         }
 
                     ?>
@@ -120,15 +130,17 @@
                     <div class="card mt-3">
                         <div class="card-header">Cadastrar Equipe</div>
                         <div class="card-body">
-                            <form>
+                            <form method="POST">
                                 <div class="form-group mb-3">
                                     <h5 class="card-title">Membro da equipe:</h5>
                                     <input type="text" name="nome_membro" class="form-control" />
                                 </div>
                                 <div class="form-group mb-3">
                                     <h5 class="card-title">Descrição do membro:</h5>
-                                    <textarea style="height: 150px; resize: vertical;" class="form-control"></textarea>
+                                    <textarea name="descricao_membro" style="height: 150px; resize: vertical;" class="form-control"></textarea>
                                 </div>
+                                <input type="hidden" name="cadastrar_equipe" />
+
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>

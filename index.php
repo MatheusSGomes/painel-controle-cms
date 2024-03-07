@@ -90,8 +90,10 @@
                             $sobre = $_POST['sobre'];
 
                             $pdo->exec("DELETE FROM `tb_sobre`");
-                            $pdo->prepare("INSERT INTO `tb_sobre`(`id`, `sobre`) VALUES (null, ?)");
-                            $sql->execute($sobre);
+
+                            $sql = "INSERT INTO `tb_sobre`(`id`, `sobre`) VALUES (null, :sobre)";
+                            $sth = $pdo->prepare($sql);
+                            $sth->execute(['sobre' => $sobre]);
 
                             echo '<div class="alert alert-success" role="alert">Código <b>sobre</b> editado com sucesso!</div>';
 

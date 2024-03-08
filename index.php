@@ -154,16 +154,23 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Nome do membro</th>
+                                        <th scope="col">Descrição</th>
                                         <th scope="col">Ação</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php for ($i = 0; $i < 3; $i++) { ?>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>
+                                    <?php
+                                        $selectMembros = $pdo->prepare("SELECT `id`,`nome`, `descricao` FROM `tb_equipe`");
+                                        $selectMembros->execute();
+                                        $membros = $selectMembros->fetchAll();
 
+                                        foreach($membros as $key => $value) {
+                                    ?>
+                                        <tr>
+                                            <th scope="row"><?php echo $value['id'] ?></th>
+                                            <th scope="row"><?php echo $value['nome'] ?></th>
+                                            <th scope="row"><?php echo $value['descricao'] ?></th>
+                                            <td>
                                                 <button type="button" class="btn btn-danger">
                                                     <img src="./icons/trash.svg" class="" />
                                                     Excluir

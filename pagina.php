@@ -67,6 +67,26 @@
 
         <hr />
 
+        <div class="row">
+            <?php
+                $selectMembros = $pdo->prepare("SELECT * FROM `tb_equipe`");
+                $selectMembros->execute();
+                $membros = $selectMembros->fetchAll();
+
+                foreach ($membros as $key => $value) {
+            ?>
+            <div class="col-lg-4">
+                <img src="https://randomuser.me/api/portraits/men/<?php echo $key ?>.jpg" class="rounded-circle" />
+
+                <h2><?php echo $value['nome'] ?></h2>
+                <p><?php echo $value['descricao'] ?></p>
+                <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
+            </div>
+            <?php } ?>
+        </div>
+
+        <hr />
+
         <main class="py-5 my-5">
             <h1>Contato</h1>
             <form>

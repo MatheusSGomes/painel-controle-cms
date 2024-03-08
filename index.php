@@ -171,7 +171,7 @@
                                             <th scope="row"><?php echo $value['nome'] ?></th>
                                             <th scope="row"><?php echo $value['descricao'] ?></th>
                                             <td>
-                                                <button type="button" class="btn btn-danger">
+                                                <button type="button" class="deletar_membro btn btn-danger" id_membro="<?php echo $value['id'] ?>">
                                                     <img src="./icons/trash.svg" class="" />
                                                     Excluir
                                                 </button>
@@ -216,6 +216,19 @@
                 });
             }
 
+            $('button.deletar_membro').click(function () {
+                var elemento = $(this);
+                var id_membro = $(this).attr('id_membro');
+
+                $.ajax({
+                    method: 'POST',
+                    data: { 'id_membro' : id_membro },
+                    url: 'deletar.php'
+                })
+                .done(function () {
+                    elemento.parent().parent().fadeOut();
+                })
+            });
         })
     </script>
 </body>
